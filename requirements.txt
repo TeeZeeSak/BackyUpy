@@ -1,0 +1,16 @@
+# Core runtime has no mandatory third-party dependencies.
+# The modules below are optional and degrade gracefully when absent.
+
+# --- GUI (Phase 1+) ---
+PySide6>=6.6
+
+# --- Local LLM client (Phase 2+) ---
+requests>=2.31
+
+# --- Content extraction (Phase 3+) ---
+pypdf>=4.0
+python-docx>=1.1
+openpyxl>=3.1
+
+# --- Testing ---
+pytest>=7.4

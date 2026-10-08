@@ -1,0 +1,130 @@
+{
+  "ollama": {
+    "url": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "temperature": 0.1,
+    "context_length": 8192,
+    "max_files_per_request": 12,
+    "request_timeout_seconds": 120,
+    "enabled": true
+  },
+  "scanner": {
+    "use_everything": true,
+    "everything_cli_path": "C:\\Tools\\Everything\\es.exe",
+    "follow_symlinks": false,
+    "max_file_size_for_content_analysis": 52428800,
+    "min_file_size_bytes": 1,
+    "skip_hidden": false,
+    "skip_system": true,
+    "skip_removable": true,
+    "user_roots": [
+      "%USERPROFILE%\\Desktop",
+      "%USERPROFILE%\\Documents",
+      "%USERPROFILE%\\Downloads",
+      "%USERPROFILE%\\Pictures",
+      "%USERPROFILE%\\Videos",
+      "%USERPROFILE%\\Music",
+      "%USERPROFILE%\\OneDrive\\Desktop",
+      "%USERPROFILE%\\OneDrive\\Documents",
+      "%USERPROFILE%\\.config",
+      "%USERPROFILE%\\source\\repos",
+      "%USERPROFILE%\\Projects",
+      "%USERPROFILE%\\Documents\\Projects",
+      "%APPDATA%",
+      "%LOCALAPPDATA%"
+    ],
+    "config_roots": [
+      "%APPDATA%",
+      "%LOCALAPPDATA%",
+      "%USERPROFILE%\\.config",
+      "%USERPROFILE%\\.ssh"
+    ],
+    "exclude_roots": [
+      "%SystemRoot%",
+      "%ProgramFiles%",
+      "%ProgramFiles(x86)%",
+      "%ProgramData%",
+      "%LOCALAPPDATA%\\Temp",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\INetCache",
+      "%LOCALAPPDATA%\\Microsoft\\Windows\\Explorer",
+      "%LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Cache",
+      "%LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\Code Cache",
+      "%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\Cache",
+      "%APPDATA%\\Mozilla\\Firefox\\Profiles",
+      "%APPDATA%\\discord\\Cache",
+      "%APPDATA%\\Slack\\Cache",
+      "%ProgramFiles(x86)%\\Steam\\steamapps\\common",
+      "%ProgramFiles%\\Steam\\steamapps\\common"
+    ],
+    "exclude_dirs": [
+      "node_modules", "__pycache__", ".venv", "venv", "env", "bin", "obj",
+      "build", "dist", "target", ".cache", ".gradle", ".mypy_cache",
+      ".pytest_cache", ".tox", ".idea", ".vs", "Thumbs.db", "$RECYCLE.BIN",
+      "System Volume Information", "Temp", "tmp", "CrashDumps"
+    ],
+    "exclude_globs": [
+      "pagefile.sys", "hiberfil.sys", "swapfile.sys", "*.tmp", "*.temp",
+      "~$*", "*.crdownload", "*.part", "desktop.ini", "*.lnk", "*.db-wal",
+      "*.db-shm"
+    ],
+    "max_files": 2000000
+  },
+  "analysis": {
+    "weights": {
+      "semantic": 0.30,
+      "uniqueness": 0.20,
+      "recency": 0.15,
+      "personal_document": 0.15,
+      "project_relevance": 0.10,
+      "file_type": 0.10
+    },
+    "thresholds": {
+      "critical": 90,
+      "important": 70,
+      "review": 40
+    },
+    "recency_half_life_days": 180,
+    "content": {
+      "enabled": true,
+      "max_chars_per_document": 8000,
+      "max_pages": 20,
+      "max_files_per_batch": 10,
+      "min_score_for_content": 55
+    },
+    "duplicates": {
+      "use_partial_hash": true,
+      "partial_sample_bytes": 65536,
+      "min_size_for_hashing": 1
+    },
+    "project": {
+      "min_files": 3,
+      "detect_git_repos": true
+    },
+    "sensitive": {
+      "detect": true,
+      "inspect_contents": false
+    }
+  },
+  "backup": {
+    "default_destination": "",
+    "preserve_structure": true,
+    "structure_template": "{machine}/{date}/Users/{user}",
+    "verify_hashes": true,
+    "resumable": true,
+    "overwrite": false,
+    "copy_retries": 2
+  },
+  "privacy": {
+    "local_only": true,
+    "telemetry": false,
+    "allow_network": false
+  },
+  "reports": {
+    "output_dir": "",
+    "formats": ["json", "csv", "html", "txt"]
+  },
+  "ui": {
+    "theme": "dark",
+    "page_size": 500
+  }
+}

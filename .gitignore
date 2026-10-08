@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+
+# Reports produced by running BackyUpy
+backyupy-scan-*
+backyupy-backup-*
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
