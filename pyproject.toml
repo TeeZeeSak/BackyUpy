@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backyupy"
+version = "0.1.0"
+description = "Local-first, LLM-assisted Windows backup discovery and auditing tool."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "BackyUpy contributors" }]
+keywords = ["backup", "windows", "ollama", "llm", "privacy", "local-first"]
+
+dependencies = []
+
+[project.optional-dependencies]
+ui = ["PySide6>=6.6"]
+extract = ["pypdf>=4.0", "python-docx>=1.1", "openpyxl>=3.1"]
+llm = ["requests>=2.31"]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+]
+
+[project.scripts]
+backyupy = "backyupy.cli:main"
+backyupy-gui = "backyupy.ui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["backyupy*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
